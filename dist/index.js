@@ -10,7 +10,7 @@ const environment_1 = require("./config/environment");
 const port = parseInt(environment_1.environment.PORT);
 const app = (0, express_1.default)();
 (0, app_1.myAppConfig)(app);
-const server = app.listen(port, () => {
+const server = app.listen(process.env.PORT || port, () => {
     (0, mongoConfig_1.dbConfig)();
 });
 server.on("uncaughtException", (error) => {

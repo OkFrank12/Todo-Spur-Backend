@@ -8,7 +8,7 @@ const port: number = parseInt(environment.PORT!);
 const app: Application = express();
 myAppConfig(app);
 
-const server = app.listen(port, () => {
+const server = app.listen(process.env.PORT || port, () => {
   dbConfig();
 });
 
